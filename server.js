@@ -21,7 +21,12 @@ mongoose
 
 // Middleware Connections
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://news-one-client.vercel.app/",
+    methods: ["GET", "POST"],
+  })
+);
 
 app.use(express.urlencoded({ extended: true }));
 
